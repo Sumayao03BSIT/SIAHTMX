@@ -16,11 +16,47 @@ class ProductFactory extends Factory
      */
     public function definition()
     {
+        $products = [
+            [
+                'imgUrl' => 'https://cdn.britannica.com/70/123170-050-D7AAF458/AK-47.jpg',
+                'name' => 'AK-47',
+                'description' => 'The AK-47, known for its durability and reliability, is one of the most widely used assault rifles in the world.',
+            ],
+            [
+                'imgUrl' => 'https://www.anareus.cz/img/p/3/7/7/6/3/37763-thickbox_default.webp',
+                'name' => 'SCAR-L',
+                'description' => 'The SCAR-L is a modern assault rifle known for its modular design and adaptability in various combat situations.',
+            ],
+            [
+                'imgUrl' => 'https://hk-usa.com/wp-content/uploads/1-G36C-LEFT-stock-extended-AUG-20161.jpg',
+                'name' => 'G36C',
+                'description' => 'The G36C is a compact assault rifle, popular for its high rate of fire and ease of use in close-quarter battles.',
+            ],
+            [
+                'imgUrl' => 'https://s.telegraph.co.uk/graphics/ar-15/images/share/thumb.jpg',
+                'name' => 'AR-15',
+                'description' => 'The AR-15 is a versatile and customizable rifle, favored by civilians and law enforcement for its precision and adaptability.',
+            ],
+            [
+                'imgUrl' => 'https://www.machineguntours.com/wp-content/uploads/2022/05/HK416-D.jpg',
+                'name' => 'HK416',
+                'description' => 'The HK416 is a high-performance rifle known for its reliability and is widely used by military and special forces worldwide.',
+            ],
+            [
+                'imgUrl' => 'https://www.airgun.jp/upload/save_image/05201532_62873603bd471.jpg',
+                'name' => 'SIG MPX',
+                'description' => 'The SIG MPX is a submachine gun designed for close-quarters combat, offering high maneuverability and rapid fire.',
+            ],
+        ];
+
+        $product = fake()->randomElement($products);
+
         return [
-            'imgUrl' => fake()->randomElement(['https://png.pngtree.com/png-vector/20191120/ourmid/pngtree-cosmetic-serum-pipette-bottle-package-png-image_2009766.jpg','https://png.pngtree.com/png-clipart/20210606/original/pngtree-3d-beauty-cosmetics-product-design-png-image_6391024.jpg','https://static.vecteezy.com/system/resources/thumbnails/024/841/285/small_2x/wireless-headphone-isolated-on-transparent-background-high-quality-bluetooth-headphone-for-advertising-and-product-catalogs-generative-ai-png.png','https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8ZYQc_rqxN6OqiBlYbeKwdQ4voVFc49cTTQ&s','https://asia.canon/media/migration/shared/live/products/EN/eos_m50_m55-200_b1.png','https://www.flir.com/globalassets/industrial/instruments/condition-monitoring/acoustic-imaging/why-you-should-choose-the-flir-si2/si2-product-image.png']),
-            'name' => fake()->word(),
-            'description' => fake()->sentence(),
-            'price' =>fake()->numberBetween(1,1000)
+            'imgUrl' => $product['imgUrl'],
+            'name' => $product['name'],
+            'description' => $product['description'],
+            'price' => fake()->numberBetween(1, 1000)
         ];
     }
 }
+
